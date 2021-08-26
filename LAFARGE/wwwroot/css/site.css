@@ -90,6 +90,6 @@ body {
 .navbar-collapse{
     flex-grow:unset;
 }
-.nav-link:focus{
+.nav-link:hover{
     font-weight:700;
 }

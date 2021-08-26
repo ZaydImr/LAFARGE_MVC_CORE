@@ -53,7 +53,7 @@ namespace LAFARGE.Controllers
         {
             ViewData["CinChauffeur"] = new SelectList(_context.Chauffeurs, "CinChauffeur", "CinChauffeur");
             ViewData["CinOperateur"] = new SelectList(_context.Operateurs, "CinOperateur", "CinOperateur");
-            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "AdresseClient");
+            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "NomClient");
             ViewData["IdQuality"] = new SelectList(_context.Qualities, "IdQuality", "NameQuality");
             return View();
         }
@@ -73,7 +73,7 @@ namespace LAFARGE.Controllers
             }
             ViewData["CinChauffeur"] = new SelectList(_context.Chauffeurs, "CinChauffeur", "CinChauffeur", commande.CinChauffeur);
             ViewData["CinOperateur"] = new SelectList(_context.Operateurs, "CinOperateur", "CinOperateur", commande.CinOperateur);
-            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "AdresseClient", commande.CodeClient);
+            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "NomClient", commande.CodeClient);
             ViewData["IdQuality"] = new SelectList(_context.Qualities, "IdQuality", "NameQuality", commande.IdQuality);
             return View(commande);
         }
@@ -93,7 +93,7 @@ namespace LAFARGE.Controllers
             }
             ViewData["CinChauffeur"] = new SelectList(_context.Chauffeurs, "CinChauffeur", "CinChauffeur", commande.CinChauffeur);
             ViewData["CinOperateur"] = new SelectList(_context.Operateurs, "CinOperateur", "CinOperateur", commande.CinOperateur);
-            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "AdresseClient", commande.CodeClient);
+            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "NomClient", commande.CodeClient);
             ViewData["IdQuality"] = new SelectList(_context.Qualities, "IdQuality", "NameQuality", commande.IdQuality);
             return View(commande);
         }
@@ -132,7 +132,7 @@ namespace LAFARGE.Controllers
             }
             ViewData["CinChauffeur"] = new SelectList(_context.Chauffeurs, "CinChauffeur", "CinChauffeur", commande.CinChauffeur);
             ViewData["CinOperateur"] = new SelectList(_context.Operateurs, "CinOperateur", "CinOperateur", commande.CinOperateur);
-            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "AdresseClient", commande.CodeClient);
+            ViewData["CodeClient"] = new SelectList(_context.Clients, "CodeClient", "NomClient", commande.CodeClient);
             ViewData["IdQuality"] = new SelectList(_context.Qualities, "IdQuality", "NameQuality", commande.IdQuality);
             return View(commande);
         }

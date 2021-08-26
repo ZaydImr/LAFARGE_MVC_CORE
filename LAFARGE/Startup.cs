@@ -27,6 +27,7 @@ namespace LAFARGE
         {
             services.AddDbContext<lafargeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +48,7 @@ namespace LAFARGE
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -54,6 +56,7 @@ namespace LAFARGE
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Commandes}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
