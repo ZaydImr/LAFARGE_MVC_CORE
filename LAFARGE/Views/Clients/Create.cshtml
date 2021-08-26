@@ -1,0 +1,50 @@
+﻿@model LAFARGE.Models.Client
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomClient" class="control-label">Nom</label>
+                <input asp-for="NomClient" class="form-control" />
+                <span asp-validation-for="NomClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroClient" class="control-label">Numero</label>
+                <input asp-for="NumeroClient" class="form-control" />
+                <span asp-validation-for="NumeroClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SituationFinanciere" class="control-label">Situation Financiere</label>
+                <input asp-for="SituationFinanciere" class="form-control" />
+                <span asp-validation-for="SituationFinanciere" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoldeClient" class="control-label">Solde</label>
+                <input asp-for="SoldeClient" class="form-control" />
+                <span asp-validation-for="SoldeClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdresseClient" class="control-label">Adresse</label>
+                <input asp-for="AdresseClient" class="form-control" />
+                <span asp-validation-for="AdresseClient" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

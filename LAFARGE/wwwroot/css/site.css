@@ -69,3 +69,27 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80% !important;
+    }
+}
+@media (min-width: 786px) {
+    .col-md-4 {
+        flex : unset;
+    }
+}
+.form-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.control-label{
+    min-width:150px;
+}
+.navbar-collapse{
+    flex-grow:unset;
+}
+.nav-link:focus{
+    font-weight:700;
+}

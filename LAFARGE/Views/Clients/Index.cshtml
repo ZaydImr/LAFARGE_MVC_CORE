@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LAFARGE.Models.Client>
+
+@{
+    ViewData["Title"] = "Client";
+}
+
+<h1>@ViewBag.title</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nom
+            </th>
+            <th>
+                Numero
+            </th>
+            <th>
+                Situation Financiere
+            </th>
+            <th>
+                Solde
+            </th>
+            <th>
+                Adresse
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SituationFinanciere)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoldeClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresseClient)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodeClient">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodeClient">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodeClient">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
