@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LAFARGE.Models.Chauffeur>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullnameChauffeur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroChauffeur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdresseChauffeur)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullnameChauffeur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroChauffeur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdresseChauffeur)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CinChauffeur">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CinChauffeur">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CinChauffeur">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

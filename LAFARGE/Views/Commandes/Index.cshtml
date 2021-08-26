@@ -1,0 +1,101 @@
+﻿@model IEnumerable<LAFARGE.Models.Commande>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TonnageReel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HeureChargement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HeureLivraison)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Verification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinChauffeurNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CinOperateurNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodeClientNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdQualityNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricule)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TonnageReel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeureChargement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeureLivraison)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Verification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinChauffeurNavigation.CinChauffeur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CinOperateurNavigation.CinOperateur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodeClientNavigation.AdresseClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdQualityNavigation.NameQuality)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BonCommande">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BonCommande">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BonCommande">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
